@@ -1,37 +1,25 @@
-
 language: node_js
 node_js:
-- "4"  # nodejs的版本
+- '4'
 branches:
   only:
-  - blog-resource  # 设置自动化部署的源码分支
-
+  - blog-resource
 env:
   global:
-    secure: RP9QFiY6MLp/yl4gRu/KyTxbd1ATillcAS95WNiXs9GyZ11L+yTVtuXe056RJdoyx1Y4LI5rql3SEgwgOlaD+FB21ZWEraI6B4Xibi8W8Ydv7NXZiReA5bXmmhhTcOGDdU0s11MvVPHB7rJI4yPoVekRHCZD5FanB0TkYDrvXB+1KZA9uPLnmZ4CQP2k1+oWBm8xrJ3IkDgTko1Fgp/uBajoL6eFWTmHVJkEjvIx1w/xlh+WQ6A/Z6ZkCHUdPf2rJTZ05u1ZmtzClLsbEG1D7Srax72kWeHoofnhgv2eO59qI6kGCNQaV81zMval7W4KKTPK2gFlXs7Gclk8NW5oM9uuUbxXndyPrSDnHJZoTz8GksSGsQ+h3qOsCDlPQnn6/C/eME3yq8OfE71oXhYFFsVeUR1ck7jsKMexkqI85AMHMXMYDhfabjp6ttc1CFfowQm3SHPHGhOd8sX2raJzzq9SyoV654XgnlEBRlDW4fzyX9tYWgPTQHUVFQdAnZEW0RJuKmh8fG3uPcnIBLi5Q7UW5yYKorPIWJ97w+itdReI7+q0cqzsp7kLT4p63uNY0dYoWcsWM9+sOIyh7V7BJnQhVK9TKxkrN5NRa4Fek47CJV5CS5qE6y64yALFKBE9HmokouDvPgRY1yGK6M5rOQ0bhlm3V6HyIw5XodXFfwM=
-
-
+    secure: kYbE5cpL08ckCCM+wbLFN5jqaDr0mMvYFXrH9yN/82JVSIJ+RegCxOFhtCV6YVyE3jobUbY1PtY0xtMhvOGj3GILaLswA4pnnAlu+JZMMkZKnEr6dQ8URIzhbF5Y5mqMoQC6w6u6glvkhb5A37PPMOBtgzSuc9rjoPx9QgMYkoZsfl+UMv+DSad3w5AE50Cppvn4AY/U2ox7XKap5LgEI8LBESYKrujyz+msYhv6PlJDteavkddrxO5V9t/cmehjDH5+68rGRNxEI2aZltUGG+Bq0wEgap3DgT0KuskQPlifkYF5fRXKaLMLECylnUOzDSPXhPo+zX7fxuzd/FY6XmPaamW6wHdXtGzePr4KezMcY731iZCxdRk+Pye1gj/f8uNpP1id2vbpU7rX+/AaV0Blm13YqgK/UGEwi1pOpobg7JX63I7CnUvG1yo3Pb+thYuvirDRgqpihtTWqZ2bveK0QxG8IN5CJmajtQQe78Od57Pj58ciDvcSlgH0tpI6Dw/eObSuca7lSyBLO8LhE8U28R5HBVoohtqe/aaYiCgUk0csVAdRmVWdMUxKEEzvhlDfeOWWSzOftZ9rpo5LzVtI4Utx4ojCh9V+RZUdLEe1ZgN7CXh4/jgIBcf8CSBMOKpYN6icoPlUP3q9qAmQ3/sxFp/497uLWxW37qSePss=
 before_install:
-- export TZ='Asia/Shanghai'  
+- export TZ='Asia/Shanghai'
 - npm install -g hexo
-- npm install -g hexo-cli 
+- npm install -g hexo-cli
 before_script:
-# ------------------------------------------------
-# 设置github账户信息 注意修改成自己的信息
-# ------------------------------------------------
 - git config --global user.name "liutf"
-- git config --global user.email lautayfir@163.com 
-# ------------------------------------------------
-# github仓库操作  注意将仓库修改成自己的
-# ------------------------------------------------
-- sed -i'' "s~git@github.com:liutf/liutf.github.io.git~https://${REPO_TOKEN}:x-oauth-basic@github.com/liutf/liutf.github.io.git~" _config.yml
-# 安装依赖组件
+- git config --global user.email lautayfir@163.com
+- sed -i'' "s~git@github.com:liutf/liutf.github.io.git~https://${REPO_TOKEN}:x-oauth-basic@github.com/liutf/liutf.github.io.git~"
+  _config.yml
 install:
 - npm install
-# 执行的命令
 script:
 - hexo clean
 - hexo generate
-# 执行的成功后执行 
 after_success:
 - hexo deploy
