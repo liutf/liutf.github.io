@@ -77,11 +77,15 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
+- type: git
   repo: git@github.com:liutf/liutf.github.io.git
   branch: master
   message: 'updated at:{{now("YYYY-MM-DD HH/mm/ss")}}'
-
+- type: git
+  repo: git@git.coding.net:lautayfir/lautayfir.git
+  branch: master
+  message: 'updated at:{{now("YYYY-MM-DD HH/mm/ss")}}'
+  
 search:
   path: search.xml
   field: post
