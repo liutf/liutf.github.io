@@ -1,22 +1,30 @@
+
 language: node_js
-sudo: false
 node_js:
-  - "5.11"
-cache:
-  apt: true
-  directories:
-    - node_modules
-addons:
-  ssh_known_hosts: git.coding.net
-script:
-  - hexo clean 
-  - hexo generate
+- '4'
 branches:
   only:
-    - blog-source
-deploy:
-  provider: script
-  script: sh .travis/deploy.sh
-  skip_cleanup: true
-  on:
-    branch: blog-source
+  - blog-source
+cache:
+  directories:
+  - node_modules
+before_install:
+- openssl aes-256-cbc -K $encrypted_8ae64f4187a1_key -iv $encrypted_8ae64f4187a1_iv
+  -in id_rsa.enc -out id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+- eval $(ssh-agent)
+- ssh-add ~/.ssh/id_rsa
+- cp .travis/ssh_config ~/.ssh/config
+- git config --global user.name "liutf"
+- git config --global user.email "lautayfir@163.com"
+install:
+- npm install hexo-cli -g
+- npm install hexo-deployer-git --save
+- npm install
+script:
+- hexo clean
+- hexo g
+
+after_success:
+- hexo deploy
+
