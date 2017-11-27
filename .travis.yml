@@ -19,4 +19,4 @@ deploy:
   script: sh .travis/deploy.sh
   skip_cleanup: true
   on:
-    branch: master
+    branch: blog-source
