@@ -1,4 +1,3 @@
-
 language: node_js
 node_js:
 - '4'
@@ -10,7 +9,7 @@ cache:
   - node_modules
 before_install:
 - openssl aes-256-cbc -K $encrypted_8ae64f4187a1_key -iv $encrypted_8ae64f4187a1_iv
-  -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
+  -in id_rsa.enc -out id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
 - eval $(ssh-agent)
 - ssh-add ~/.ssh/id_rsa
@@ -24,7 +23,5 @@ install:
 script:
 - hexo clean
 - hexo g
-
 after_success:
 - hexo deploy
-
