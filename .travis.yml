@@ -12,7 +12,7 @@ script:
   - hexo clean && hexo generate
 branches:
   only:
-    - master
+    - blog-source
 deploy:
   provider: script
   script: sh .travis/deploy.sh
