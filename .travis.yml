@@ -1,11 +1,16 @@
 language: node_js
 node_js: stable
 
+cache:
+  directories:
+    - node_modules
+
 before_install:
 - export TZ='Asia/Shanghai'
 - npm install -g hexo-cli
 
 script:
+  - hexo clean
   - hexo g
 
 after_script:
@@ -14,7 +19,7 @@ after_script:
   - git config user.name "liutf"
   - git config user.email "lautayfir@163.com"
   - git add .
-  - git commit -m "Update docs"
+  - git commit -m "Travis CI"
   - git push --force --quiet "https://${REPO_TOKEN}@${GH_REF}" master:master
 
 branches:
