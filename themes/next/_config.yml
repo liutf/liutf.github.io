@@ -19,8 +19,8 @@ override: false
 # For example, you put your favicons into `hexo-site/source/images` directory.
 # Then need to rename & redefine they on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
+  small: /images/t-32x32.png
+  medium: /images/t-16x16.png
   apple_touch_icon: /images/apple-touch-icon-next.png
   # safari_pinned_tab: /images/logo.svg
   #android_manifest: /images/manifest.json
@@ -54,7 +54,7 @@ footer:
     # Theme & scheme info link (Theme - NexT.scheme).
     enable: true
     # Version info of NexT after scheme info (vX.X.X).
-    version: true
+    version: false
   # -------------------------------------------------------------
   # Any custom text can be defined here.
   #custom_text: Hosted by <a target="_blank" href="https://pages.github.com">GitHub Pages</a>
@@ -361,7 +361,7 @@ disqus:
   count: true
 
 # Hypercomments
-#hypercomments_id:
+hypercomments_id: 98338
 
 # changyan
 changyan:
@@ -391,7 +391,7 @@ valine:
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
-#livere_uid: your uid
+#livere_uid: MTAyMC8zMTgzNy84NDAx
 
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
@@ -414,14 +414,14 @@ gitment:
 # Available value:
 #    button | slide
 # Warning: Baidu Share does not support https.
-#baidushare:
-##  type: button
+baidushare:
+ type: button
 
 # Share
 # This plugin is more useful in China, make sure you known how to use it.
 # And you can find the use guide at official webiste: http://www.jiathis.com/.
 # Warning: JiaThis does not support https.
-jiathis: true
+# jiathis: true
   ##uid: Get this uid from http://www.jiathis.com/
 #add_this_id:
 
@@ -527,9 +527,9 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
+  enable: true
+  app_id: UW5sjfwNO4TBiBXicpGJNqx2-gzGzoHsz
+  app_key: 6JaCTB7VHUrqrjNpNx7NW0N9
 
 # Another tool to show number of visitors to each article.
 # visit https://console.firebase.google.com/u/0/ to get apiKey and projectId
@@ -807,5 +807,3 @@ images: images
 
 # Theme version
 version: 5.1.3
-
-livere_uid: MTAyMC8zMTgzNy84NDAx
