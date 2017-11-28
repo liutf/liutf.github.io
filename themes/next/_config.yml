@@ -807,3 +807,7 @@ images: images
 
 # Theme version
 version: 5.1.3
+
+#Share
+sharesdk: true
+shareSDKappkey: 22b082b2a5aa7  

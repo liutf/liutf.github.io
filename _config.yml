@@ -108,6 +108,3 @@ feed:
   content:
   content_limit: 140
   content_limit_delim: ' '
-
-mob_share:
-  appkey: 22b082b2a5aa7
