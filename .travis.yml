@@ -8,6 +8,9 @@ cache:
 before_install:
 - export TZ='Asia/Shanghai'
 - npm install -g hexo-cli
+- npm install hexo-generator-sitemap --save
+- npm install hexo-generator-baidu-sitemap@0.1.1 --save
+- npm install hexo-generator-feed --save
 
 script:
   - hexo clean
