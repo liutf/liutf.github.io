@@ -1,6 +1,5 @@
 language: node_js
-node_js:
-- '4'
+node_js: stable
 branches:
   only:
   - blog-source
@@ -17,9 +16,8 @@ before_install:
 - git config --global user.name "liutf"
 - git config --global user.email "lautayfir@163.com"
 install:
-- npm install hexo-cli -g
+- npm install -g hexo-cli 
 - npm install hexo-deployer-git --save
-- npm install -- save-dev hexo-util
 script:
 - hexo clean
 - hexo g
