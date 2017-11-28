@@ -1,26 +1,25 @@
 language: node_js
 node_js: stable
+
+before_install:
+- export TZ='Asia/Shanghai'
+- npm install -g hexo-cli
+
+script:
+  - hexo g
+
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "liutf"
+  - git config user.email "lautayfir@163.com"
+  - git add .
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://${REPO_TOKEN}@${GH_REF}" master:master
+
 branches:
   only:
-  - blog-source
-cache:
-  directories:
-  - node_modules
-before_install:
-- openssl aes-256-cbc -K $encrypted_625136724ef3_key -iv $encrypted_625136724ef3_iv
-  -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
-- chmod 600 ~/.ssh/id_rsa
-- eval $(ssh-agent)
-- ssh-add ~/.ssh/id_rsa
-- cp .travis/ssh_config ~/.ssh/config
-- git config --global user.name "liutf"
-- git config --global user.email "lautayfir@163.com"
-- npm install
-install:
-- npm install -g hexo-cli 
-- npm install hexo-deployer-git --save
-script:
-- hexo clean
-- hexo g
-after_success:
-- hexo deploy
+    - blog-source
+env:
+ global:
+   - GH_REF: github.com/liutf/liutf.github.io.git
