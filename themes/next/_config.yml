@@ -548,16 +548,16 @@ busuanzi_count:
   enable: true
   # custom uv span for the whole site
   site_uv: true
-  site_uv_header: <i class="fa fa-user"></i> 访问用户
-  site_uv_footer: 人
+  site_uv_header: <i class="fa fa-user"></i>
+  site_uv_footer: 
   # custom pv span for the whole site
   site_pv: true
-  site_pv_header: <i class="fa fa-eye"></i> 访问次数
-  site_pv_footer: 次
+  site_pv_header: <i class="fa fa-eye"></i>
+  site_pv_footer: 
   # custom pv span for one page only
   page_pv: false
-  page_pv_header: <i class="fa fa-file-o"></i> 本文总阅读量
-  page_pv_footer: 次
+  page_pv_header: <i class="fa fa-file-o"></i>
+  page_pv_footer: 
 
 
 # Tencent analytics ID
