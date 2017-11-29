@@ -361,13 +361,13 @@ disqus:
   count: true
 
 # Hypercomments
-hypercomments_id: 98338
+# hypercomments_id: 98338
 
 # changyan
 changyan:
-  enable: false
-  appid:
-  appkey:
+  enable: true
+  appid: cytl6BuvU
+  appkey: 44d8a8fdb314c613c87f6e1b3dd6720a
 
 
 # Valine.
