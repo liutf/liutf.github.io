@@ -15,5 +15,5 @@ Disallow: /vendors/
 Disallow: /fancybox/
 
 
-Sitemap: liutf.com/sitemap.xml
-Sitemap: liutf.com/baidusitemap.xml
+Sitemap: http://liutf.com/sitemap.xml
+Sitemap: http://liutf.com/baidusitemap.xml
